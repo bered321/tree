@@ -1,7 +1,13 @@
+package io;
+
 import java.io.*;
 
-public class FileHandlerSaver implements DataSave {
-    private void saveSer(FamilyTree familyTree) throws IOException, ClassNotFoundException {
+import human.Human;
+import tree.FamilyTree;
+import tree.Tree;
+
+public class FileHandlerSaver<T> implements DataSave<T> {
+    private void saveSer(Tree<T> familyTree) throws IOException, ClassNotFoundException {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(
                 new FileOutputStream("familyTree.ser"));
         objectOutputStream.writeObject(familyTree);
@@ -10,10 +16,9 @@ public class FileHandlerSaver implements DataSave {
 
 
     @Override
-            public void saveData(FamilyTree familyTree) throws IOException, ClassNotFoundException{
+            public void saveData(Tree<T> familyTree) throws IOException, ClassNotFoundException{
             saveSer(familyTree);
             System.out.println("Файл сериализации создан");
-
     }
 
 }
