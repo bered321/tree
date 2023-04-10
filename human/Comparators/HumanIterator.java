@@ -1,10 +1,8 @@
 package human.Comparators;
 
-import human.Human;
-
 import java.util.Iterator;
 import java.util.List;
-public class HumanIterator<T extends Human> implements Iterator<T> {
+public class HumanIterator<T> implements Iterator<T> {
     private int index;
     private List<T> familyTree;
 

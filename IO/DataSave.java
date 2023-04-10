@@ -2,8 +2,9 @@ package io;
 
 import java.io.IOException;
 
-import tree.Tree;
+import human.Human;
+import tree.FamilyTree;
 
-public interface DataSave<T> {
-    void saveData(Tree<T> familyTree) throws IOException, ClassNotFoundException;
+public interface DataSave {
+    void saveData(FamilyTree<Human> familyTree) throws IOException, ClassNotFoundException;
 }
